@@ -1,77 +1,16 @@
 # depslib dependency file v1.0
-1533062952 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Employee.c
-
-1533063050 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/main.c
+1572723776 source:e:\facultad\trabajopracticonº3\employee.c
 	<stdio.h>
 	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1532354323 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/LinkedList.h
-
-1533062926 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Employee.h
-
-1533063080 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/parser.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1533062952 source:/home/mauro/Descargas/TP3/Linux_64/Employee.c
-
-1533066103 source:/home/mauro/Descargas/TP3/Linux_64/main.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1532354323 /home/mauro/Descargas/TP3/Linux_64/LinkedList.h
-
-1533066103 /home/mauro/Descargas/TP3/Linux_64/Employee.h
-
-1533063080 source:/home/mauro/Descargas/TP3/Linux_64/parser.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1533145792 source:/home/mauro/Descargas/TP3-20180801T173619Z-001/TP3/Linux_64/Controller.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1533118898 /home/mauro/Descargas/TP3-20180801T173619Z-001/TP3/Linux_64/LinkedList.h
-
-1533118898 /home/mauro/Descargas/TP3-20180801T173619Z-001/TP3/Linux_64/Employee.h
-
-1533118898 source:/home/mauro/Descargas/TP3-20180801T173619Z-001/TP3/Linux_64/Employee.c
-
-1533145890 source:/home/mauro/Descargas/TP3-20180801T173619Z-001/TP3/Linux_64/parser.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1572390756 source:e:\facultad\trabajopracticonº3\parser.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1572390855 e:\facultad\trabajopracticonº3\linkedlist.h
-
-1572396326 e:\facultad\trabajopracticonº3\employee.h
-
-1572395761 source:e:\facultad\trabajopracticonº3\controller.c
-	<stdio.h>
-	<stdlib.h>
-	<stdio.h>
 	<string.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1572396008 source:e:\facultad\trabajopracticonº3\main.c
+1572913075 e:\facultad\trabajopracticonº3\linkedlist.h
+
+1572723787 e:\facultad\trabajopracticonº3\employee.h
+
+1572984133 source:e:\facultad\trabajopracticonº3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -80,44 +19,19 @@
 
 1572394753 e:\facultad\trabajopracticonº3\controller.h
 
-1572397022 source:e:\facultad\trabajopracticonº3\employee.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1572723776 source:c:\users\pc casa\desktop\trabajopracticonº3\employee.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"LinkedList.h"
-	"Employee.h"
-
-1572390855 c:\users\pc casa\desktop\trabajopracticonº3\linkedlist.h
-
-1572723787 c:\users\pc casa\desktop\trabajopracticonº3\employee.h
-
-1572390756 source:c:\users\pc casa\desktop\trabajopracticonº3\parser.c
+1572390756 source:e:\facultad\trabajopracticonº3\parser.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
 	"Employee.h"
 
-1572898106 source:c:\users\pc casa\desktop\trabajopracticonº3\main.c
-	<stdio.h>
-	<stdlib.h>
-	"LinkedList.h"
-	"Controller.h"
-	"Employee.h"
-
-1572394753 c:\users\pc casa\desktop\trabajopracticonº3\controller.h
-
-1572898358 source:c:\users\pc casa\desktop\trabajopracticonº3\controller.c
+1572984164 source:e:\facultad\trabajopracticonº3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
+	<ctype.h>
+	<conio.h>
 	"LinkedList.h"
 	"Employee.h"
 

@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#include <conio.h>
 #include "LinkedList.h"
 #include "Employee.h"
 #define ESC 27
@@ -16,6 +15,7 @@ struct Aux{
 };
 
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee){
+    // parser
     FILE *pFile;
     int r;
     char var1[50],var2[50],var3[50],var4[50];
@@ -96,38 +96,32 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee){
 
 int controller_addEmployee(LinkedList* pArrayListEmployee){
     char rta;
-    int aux;
     char a[50], b[50], c[50], d[50];
 
     do{
         printf("Ingrese nombre: ");
         scanf("%s",b);
-        printf("Ingrese horas trabajadas: ");
+        printf("\nIngrese horas trabajadas: ");
         scanf("%s",c);
         fflush(stdin);
-        printf("Ingrese sueldo: ");
+        printf("\nIngrese sueldo: ");
         scanf("%s",d);
 
         do{
             printf("\nIngresa mas usuarios? (s/n)");
-            fflush(stdin);
             scanf("%c",&rta);
             rta = tolower(rta);
-        }while(rta != 's' && rta != 'n');
-
-        // temporal
-        aux = (ll_len(pArrayListEmployee))+1;
-        sprintf(a,"%d",aux);
+        }while(rta != 's' || rta != 'n');
+        *a = 1;
 
         Employee *this = employee_newParametros(a, b, c, d);
         ll_add(pArrayListEmployee,this);
-        printf("\n\n");
-    }while(rta == 's');
+
+    }while(rta != 's');
     return 1;
 }
 
 int controller_editEmployee(LinkedList* pArrayListEmployee){
-
     return 1;
 }
 
@@ -137,14 +131,6 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee){
 
 int controller_ListEmployee(LinkedList* pArrayListEmployee){
     // conviene armar una struct estatica y cargar los datos desde linkedlist.
-    struct Aux *pers;
-    int i;
-
-    printf("Elementos cargados en la LinkedList:\n\n");
-    for(i=0; i<ll_len(pArrayListEmployee); i++){
-        pers = ll_get(pArrayListEmployee,i);
-        printf("%d - %s - %d - %d\n",pers->id,pers->nombre,pers->horasTrabajadas,pers->sueldo);
-	}
     return 1;
 }
 
@@ -168,6 +154,14 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee){
 
 	for(i=0; i<ll_len(pArrayListEmployee); i++){
         pers = ll_get(pArrayListEmployee,i);
+
+        /*
+        *a = (int)realloc(a,sizeof(pers->id));
+        *b = (int)realloc(b,sizeof(pers->nombre));
+        *c = (int)realloc(c,sizeof(pers->horasTrabajadas));
+        *d = (int)realloc(d,sizeof(pers->sueldo));
+        */
+
         sprintf(a,"%d",pers->id);
         sprintf(b,"%s",pers->nombre);
         sprintf(c,"%d",pers->horasTrabajadas);
