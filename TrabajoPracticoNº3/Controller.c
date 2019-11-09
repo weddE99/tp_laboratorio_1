@@ -32,7 +32,6 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee){
         if(r==4){
             Employee *this = employee_newParametros(var1, var2, var3, var4);
             ll_add(pArrayListEmployee,this);
-            //printf("\n%s\t%s\t%s\t%s\n",var1,var2,var3,var4);
         }
         else{
             break;
@@ -71,7 +70,6 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee){
 
     while(!feof(pFile) && i<(aux)-1){
         cant = fread(&pers,sizeof(pers),1,pFile);
-        //printf("\n%d\t%s\t%d\t%d\n",pers.id,pers.nombre,pers.horasTrabajadas,pers.sueldo);
         sprintf(a,"%d",pers.id);
         sprintf(b,"%d",pers.horasTrabajadas);
         sprintf(c,"%d",pers.sueldo);
@@ -132,31 +130,32 @@ int controller_editEmployee(LinkedList* pArrayListEmployee){
 }
 
 int controller_removeEmployee(LinkedList* pArrayListEmployee){
+
     return 1;
 }
 
 int controller_ListEmployee(LinkedList* pArrayListEmployee){
-    // conviene armar una struct estatica y cargar los datos desde linkedlist.
-    struct Aux *pers;
+    Employee *pers;
     int i;
 
     printf("Elementos cargados en la LinkedList:\n\n");
     for(i=0; i<ll_len(pArrayListEmployee); i++){
         pers = ll_get(pArrayListEmployee,i);
-        printf("%d - %s - %d - %d\n",pers->id,pers->nombre,pers->horasTrabajadas,pers->sueldo);
+        printf("%d - %s - %d - %d\n",employee_getId(pers),employee_getNombre(pers),
+                                        employee_getHorasTrabajadas(pers),employee_getSueldo(pers));
 	}
     return 1;
 }
 
 int controller_sortEmployee(LinkedList* pArrayListEmployee){
+
     return 1;
 }
 
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee){
     int i=0;
     FILE *pFile;
-    struct Aux *pers;
-    char a[50], b[50], c[50], d[50];
+    Employee *pers;
 
     if((pFile = fopen(path,"w"))==NULL){
 		printf("No se pudo abrir el archivo");
@@ -164,15 +163,10 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee){
 
 	fprintf(pFile,"id,nombre,horasTrabajadas,sueldo");
 
-	//printf("%d",ll_len(pArrayListEmployee));
-
 	for(i=0; i<ll_len(pArrayListEmployee); i++){
         pers = ll_get(pArrayListEmployee,i);
-        sprintf(a,"%d",pers->id);
-        sprintf(b,"%s",pers->nombre);
-        sprintf(c,"%d",pers->horasTrabajadas);
-        sprintf(d,"%d",pers->sueldo);
-        fprintf(pFile,"\n%s,%s,%s,%s",a,b,c,d);
+        fprintf(pFile,"\n%d,%s,%d,%d",employee_getId(pers),employee_getNombre(pers),
+                                        employee_getHorasTrabajadas(pers),employee_getSueldo(pers));
 	}
 	fclose(pFile);
     return 1;

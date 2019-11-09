@@ -24,8 +24,6 @@ Employee* employee_newParametros(char* idStr, char* nombreStr, char* horasTrabaj
     return this;
 }
 
-// return = por error.
-
 int employee_setId(Employee* this,int id){
     if(id >0) {
         this->id = id;
@@ -33,9 +31,8 @@ int employee_setId(Employee* this,int id){
     return 0;
 }
 
-int employee_getId(Employee* this,int* id){
-    *id = this->id;
-    return 0;
+int employee_getId(Employee* this){
+    return this->id;
 }
 
 int employee_setNombre(Employee* this,char* nombre){
@@ -43,9 +40,8 @@ int employee_setNombre(Employee* this,char* nombre){
     return 0;
 }
 
-int employee_getNombre(Employee* this, char* nombre){
-    nombre = this->nombre;
-    return 0;
+char* employee_getNombre(Employee* this){
+    return this->nombre;
 }
 
 int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas){
@@ -55,9 +51,8 @@ int employee_setHorasTrabajadas(Employee* this,int horasTrabajadas){
     return 0;
 }
 
-int employee_getHorasTrabajadas(Employee* this, int* horasTrabajadas){
-    *horasTrabajadas = this->horasTrabajadas;
-    return 0;
+int employee_getHorasTrabajadas(Employee* this){
+    return this->horasTrabajadas;
 }
 
 int employee_setSueldo(Employee* this,int sueldo){
@@ -67,3 +62,6 @@ int employee_setSueldo(Employee* this,int sueldo){
     return 0;
 }
 
+int employee_getSueldo(Employee* this){
+    return this->sueldo;
+}

@@ -73,19 +73,26 @@ int main(){
                 else printf("ERROR!\n\n");
                 break;
             case 7:
+                system("cls");
+                aux = controller_sortEmployee(listaEmpleados);
+                if(aux == 1)printf("Elementos ordenados exitosamente!\n\n");
+                else printf("ERROR!\n\n");
                 break;
             case 8:
-                controller_saveAsText("data.csv",listaEmpleados);
+                aux = controller_saveAsText("data.csv",listaEmpleados);
                 system("cls");
-                printf("Exito en la escritura!\n\n");
+                if(aux == 1)printf("Exito en la escritura!\n\n");
+                else printf("ERROR!\n\n");
                 break;
             case 9:
-                controller_saveAsBinary("data.csv",listaEmpleados);
+                aux = controller_saveAsBinary("data.csv",listaEmpleados);
                 system("cls");
-                printf("Exito en la escritura!\n\n");
+                if(aux == 1)printf("Exito en la escritura!\n\n");
+                else printf("ERROR!\n\n");
                 break;
             case 10:
                 printf("\nFinalizando.\n");
+                ll_deleteLinkedList(listaEmpleados);
                 break;
             default:
                 system("cls");

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1572723776 source:e:\facultad\trabajopracticonº3\employee.c
+1572997285 source:e:\facultad\trabajopracticonº3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -8,9 +8,9 @@
 
 1572913075 e:\facultad\trabajopracticonº3\linkedlist.h
 
-1572723787 e:\facultad\trabajopracticonº3\employee.h
+1572995718 e:\facultad\trabajopracticonº3\employee.h
 
-1572984133 source:e:\facultad\trabajopracticonº3\main.c
+1572997344 source:e:\facultad\trabajopracticonº3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -25,7 +25,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1572984164 source:e:\facultad\trabajopracticonº3\controller.c
+1572997275 source:e:\facultad\trabajopracticonº3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio.h>
