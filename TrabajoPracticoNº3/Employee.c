@@ -10,10 +10,11 @@ Employee* employee_new(){
 }
 
 Employee* employee_newParametros(char* idStr, char* nombreStr, char* horasTrabajadasStr, char* sueldosStr){
-    int id, horas, sueldos;
+    int id, horas;
+    float sueldos;
     id = atoi(idStr);
     horas = atoi(horasTrabajadasStr);
-    sueldos = atoi(sueldosStr);
+    sueldos = atof(sueldosStr);
 
     Employee *this = employee_new();
     employee_setId(this,id);
@@ -55,13 +56,14 @@ int employee_getHorasTrabajadas(Employee* this){
     return this->horasTrabajadas;
 }
 
-int employee_setSueldo(Employee* this,int sueldo){
+int employee_setSueldo(Employee* this,float sueldo){
     if(sueldo >0){
         this->sueldo = sueldo;
     }
     return 0;
 }
 
-int employee_getSueldo(Employee* this){
+float employee_getSueldo(Employee* this){
     return this->sueldo;
 }
+

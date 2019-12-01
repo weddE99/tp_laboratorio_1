@@ -20,6 +20,8 @@
 
 int main(){
     int option = 0;
+    int contadorC = 0;
+    int contadorA = 0;
     int aux;
     LinkedList* listaEmpleados = ll_newLinkedList();
 
@@ -39,56 +41,122 @@ int main(){
 
         switch(option){
             case 1:
-                aux = controller_loadFromText("data.csv",listaEmpleados);
-                system("cls");
-                if(aux == 1)printf("Cantidad de elementos en la linkedList: %d\n\n",ll_len(listaEmpleados));
-                else printf("ERROR!\n\n");
+                if(contadorC == 0){
+                    aux = controller_loadFromText("data.csv",listaEmpleados);
+                    system("cls");
+                    if(aux == 1){
+                        contadorC = 1;
+                        printf("Cantidad de elementos en la linkedList: %d\n\n",ll_len(listaEmpleados));
+                    }
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! Ya ha sido cargado un archivo.\n\n");
+                }
                 break;
             case 2:
-                aux = controller_loadFromBinary("data.csv",listaEmpleados);
-                system("cls");
-                if(aux == 1)printf("Cantidad de elementos en la linkedList: %d\n\n",ll_len(listaEmpleados));
-                else printf("ERROR!\n\n");
+                if(contadorC == 0){
+                    aux = controller_loadFromBinary("data.csv",listaEmpleados);
+                    system("cls");
+                    if(aux == 1){
+                        printf("Cantidad de elementos en la linkedList: %d\n\n",ll_len(listaEmpleados));
+                        contadorC = 1;
+                    }
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! Ya ha sido cargado un archivo.\n\n");
+                }
                 break;
             case 3:
                 system("cls");
                 aux = controller_addEmployee(listaEmpleados);
                 system("cls");
-                if(aux == 1)printf("Elementos anadidos exitosamente!\n\n");
+                if(aux == 1){
+                    printf("Elementos anadidos exitosamente!\n\n");
+                    contadorA = 1;
+                }
                 else printf("ERROR!\n\n");
                 break;
             case 4:
-                system("cls");
-                aux = controller_editEmployee(listaEmpleados);
-                system("cls");
-                if(aux == 1)printf("Elementos borrados exitosamente!\n\n");
-                else printf("ERROR!\n\n");
+                if(contadorA == 1 || contadorC == 1){
+                    system("cls");
+                    aux = controller_editEmployee(listaEmpleados);
+                    system("cls");
+                    if(aux == 1)printf("Elementos editados exitosamente!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 5:
+                if(contadorA == 1 || contadorC == 1){
+                    system("cls");
+                    aux = controller_removeEmployee(listaEmpleados);
+                    system("cls");
+                    if(aux == 1)printf("Accion realizada exitosamente!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 6:
-                system("cls");
-                aux = controller_ListEmployee(listaEmpleados);
-                if(aux == 1)printf("\nElementos mostrados exitosamente!\n\n");
-                else printf("ERROR!\n\n");
+                if(contadorA == 1 || contadorC == 1){
+                    system("cls");
+                    aux = controller_ListEmployee(listaEmpleados);
+                    printf("\n");
+                    system("pause");
+                    system("cls");
+                    if(aux == 1)printf("Elementos mostrados exitosamente!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 7:
-                system("cls");
-                aux = controller_sortEmployee(listaEmpleados);
-                if(aux == 1)printf("Elementos ordenados exitosamente!\n\n");
-                else printf("ERROR!\n\n");
+                if(contadorA == 1 || contadorC == 1){
+                    system("cls");
+                    aux = controller_sortEmployee(listaEmpleados);
+                    if(aux == 1)printf("Elementos ordenados exitosamente!\n\n");
+                    if(aux == 2)printf("No se han producido cambios!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 8:
-                aux = controller_saveAsText("data.csv",listaEmpleados);
-                system("cls");
-                if(aux == 1)printf("Exito en la escritura!\n\n");
-                else printf("ERROR!\n\n");
+                if(contadorA == 1 || contadorC == 1){
+                    aux = controller_saveAsText("data.csv",listaEmpleados);
+                    system("cls");
+                    if(aux == 1)printf("Exito en la escritura!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 9:
-                aux = controller_saveAsBinary("data.csv",listaEmpleados);
-                system("cls");
-                if(aux == 1)printf("Exito en la escritura!\n\n");
-                else printf("ERROR!\n\n");
+                if(contadorA == 1 || contadorC == 1){
+                    aux = controller_saveAsBinary("data.csv",listaEmpleados);
+                    system("cls");
+                    if(aux == 1)printf("Exito en la escritura!\n\n");
+                    else printf("ERROR!\n\n");
+                }
+                else{
+                    system("cls");
+                    printf("ERROR! No se ha cargado ningun registro!\n\n");
+                }
                 break;
             case 10:
                 printf("\nFinalizando.\n");
@@ -96,7 +164,7 @@ int main(){
                 break;
             default:
                 system("cls");
-                printf("Ingreso de Opcion Inexistente!\n\n");
+                printf("Ingreso Opcion Inexistente!\n\n");
         }
     }while(option != 10);
     return 0;
