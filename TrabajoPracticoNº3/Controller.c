@@ -156,12 +156,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee){
     aux = (pers2->id);
 
     do{
+    do{
         r = getInt(&opcion,"Que id desea modificar?: ","Rango valido [0 - Max Id]",1,aux);
         if(r != 0) printf("\n");
     }
     while(r != 0);
 
-    do{
     for(i=0; i<ll_len(pArrayListEmployee); i++){
         pers = ll_get(pArrayListEmployee,i);
         if(pers->id == opcion){
@@ -178,7 +178,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee){
             do{
                 do{
                     r = getInt(&selec,
-                        "* 1)Modificar nombre\n* 2)Modificar horas trabajadas\n* 3)Modificar sueldo\n*4)Salir\n Opcion: "
+                        "* 1)Modificar nombre\n* 2)Modificar horas trabajadas\n* 3)Modificar sueldo\n* 4)Salir\n Opcion: "
                         ,"Rango valido [0 - 4]",1,4);
                     if(r != 0) printf("\n");
                 }
@@ -210,7 +210,6 @@ int controller_editEmployee(LinkedList* pArrayListEmployee){
                         break;
                 }
             }while(selec != 4);
-
             do{
                 r = getChar(&conf,"Confirma la modificacion? [S][N]: ","Solo [S][N]",'S','N');
                 if(conf == 'S') {
@@ -224,7 +223,9 @@ int controller_editEmployee(LinkedList* pArrayListEmployee){
         }
         noEsta = 1;
     }
-    if(noEsta == 1)printf("ERROR! No se encontro dicha id.\n\n");
+    if(noEsta == 1){
+        printf("ERROR! No se encontro dicha id.\n\n");
+    }
     }while(noEsta == 1);
     printf("\n");
 

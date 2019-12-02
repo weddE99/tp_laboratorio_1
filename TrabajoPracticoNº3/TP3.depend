@@ -87,7 +87,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1572723776 source:c:\users\pc casa\desktop\trabajopracticonº3\employee.c
+1575159566 source:c:\users\pc casa\desktop\trabajopracticonº3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -96,7 +96,7 @@
 
 1572390855 c:\users\pc casa\desktop\trabajopracticonº3\linkedlist.h
 
-1572723787 c:\users\pc casa\desktop\trabajopracticonº3\employee.h
+1575159578 c:\users\pc casa\desktop\trabajopracticonº3\employee.h
 
 1572390756 source:c:\users\pc casa\desktop\trabajopracticonº3\parser.c
 	<stdio.h>
@@ -104,7 +104,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1572898106 source:c:\users\pc casa\desktop\trabajopracticonº3\main.c
+1575163481 source:c:\users\pc casa\desktop\trabajopracticonº3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -113,13 +113,16 @@
 
 1572394753 c:\users\pc casa\desktop\trabajopracticonº3\controller.h
 
-1572898358 source:c:\users\pc casa\desktop\trabajopracticonº3\controller.c
+1575247354 source:c:\users\pc casa\desktop\trabajopracticonº3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
+	<ctype.h>
 	"LinkedList.h"
 	"Employee.h"
+	"Controller.h"
+	"utn.h"
 
 1575159566 source:c:\users\pc casa\documents\facultad\trabajopracticonº3\employee.c
 	<stdio.h>
@@ -164,4 +167,11 @@
 	<string.h>
 
 1574614805 c:\users\pc casa\documents\facultad\trabajopracticonº3\utn.h
+
+1575132141 source:c:\users\pc casa\desktop\trabajopracticonº3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1574614805 c:\users\pc casa\desktop\trabajopracticonº3\utn.h
 
