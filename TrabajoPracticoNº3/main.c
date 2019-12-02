@@ -126,7 +126,7 @@ int main(){
                     system("cls");
                     aux = controller_sortEmployee(listaEmpleados);
                     if(aux == 1)printf("Elementos ordenados exitosamente!\n\n");
-                    if(aux == 2)printf("No se han producido cambios!\n\n");
+                    else if(aux == 2)printf("No se han producido cambios!\n\n");
                     else printf("ERROR!\n\n");
                 }
                 else{

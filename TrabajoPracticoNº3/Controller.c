@@ -12,7 +12,7 @@ struct Aux{
     int id;
     char nombre[128];
     int horasTrabajadas;
-    int sueldo;
+    float sueldo;
 };
 
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee){
@@ -67,13 +67,12 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee){
 	}
 
 	rewind(pFile);
-    printf("%d",aux);
 
     while(!feof(pFile) && i<(aux)-1){
         cant = fread(&pers,sizeof(pers),1,pFile);
         sprintf(a,"%d",pers.id);
         sprintf(b,"%d",pers.horasTrabajadas);
-        sprintf(c,"%d",pers.sueldo);
+        sprintf(c,"%.2f",pers.sueldo);
 
         Employee *this = employee_newParametros(a, pers.nombre, b, c);
         ll_add(pArrayListEmployee,this);
@@ -431,15 +430,13 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee){
 
 	fprintf(pFile,"id,nombre,horasTrabajadas,sueldo");
 
-	printf("%d",ll_len(pArrayListEmployee));
-
 	for(i=0; i<ll_len(pArrayListEmployee); i++){
         pers = ll_get(pArrayListEmployee,i);
 
         sprintf(a,"%d",pers->id);
         sprintf(b,"%s",pers->nombre);
         sprintf(c,"%d",pers->horasTrabajadas);
-        sprintf(d,"%d",pers->sueldo);
+        sprintf(d,"%.2f",pers->sueldo);
 
         fprintf(pFile,"\n%s,%s,%s,%s",a,b,c,d);
 	}

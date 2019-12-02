@@ -61,17 +61,20 @@
 
 1572390855 e:\facultad\trabajopracticonº3\linkedlist.h
 
-1572396326 e:\facultad\trabajopracticonº3\employee.h
+1575159578 e:\facultad\trabajopracticonº3\employee.h
 
-1572395761 source:e:\facultad\trabajopracticonº3\controller.c
+1575248735 source:e:\facultad\trabajopracticonº3\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
+	<ctype.h>
 	"LinkedList.h"
 	"Employee.h"
+	"Controller.h"
+	"utn.h"
 
-1572396008 source:e:\facultad\trabajopracticonº3\main.c
+1575314911 source:e:\facultad\trabajopracticonº3\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -80,7 +83,7 @@
 
 1572394753 e:\facultad\trabajopracticonº3\controller.h
 
-1572397022 source:e:\facultad\trabajopracticonº3\employee.c
+1575159566 source:e:\facultad\trabajopracticonº3\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -174,4 +177,11 @@
 	<string.h>
 
 1574614805 c:\users\pc casa\desktop\trabajopracticonº3\utn.h
+
+1574614805 e:\facultad\trabajopracticonº3\utn.h
+
+1575132141 source:e:\facultad\trabajopracticonº3\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
